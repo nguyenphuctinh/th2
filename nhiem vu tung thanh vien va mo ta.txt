@@ -1,0 +1,13 @@
+Nguyễn Phúc Tĩnh - B19DCCN587: viết productController, products.html, updateProduct.html
+Nguyễn Duy Mạnh - B19DCCN417: viết model,  HomeController, repository
+Nguyễn Đình Quân -B19DCCN528: tạo csdl, viết notfount.html, home.html, deleteProduct.html, css
+
+Mô tả cách làm:
+- Sử dụng thymeleaf để hiển thị dữ liệu
+- Tạo cơ sở dữ liệu tên th2 trong mysql và tạo bảng product
+- trong file application.properties điền tài khoản mật khẩu của mysql
+- Tạo file Product với anotation Data, Entity, Table(name='product') và các thuộc tính tương ứng trong csdl
+- Tạo các controller để xử lý các yêu cầu
+- @GetMapping("/updateProduct") sẽ khởi tạo product, gán và  hiển thị trang updateProduct
+- Tại trang updateProduct sẽ có 1 form để cập nhật lại các thuộc tính của product
+- Tạo 1 trang notfound để xử lý trường hợp @GetMapping("/updateProduct/{id}") id không tồn tại
