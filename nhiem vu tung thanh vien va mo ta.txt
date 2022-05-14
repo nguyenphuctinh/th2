@@ -7,7 +7,17 @@ Mô tả cách làm:
 - Tạo cơ sở dữ liệu tên th2 trong mysql và tạo bảng product
 - trong file application.properties điền tài khoản mật khẩu của mysql
 - Tạo file Product với anotation Data, Entity, Table(name='product') và các thuộc tính tương ứng trong csdl
+	@Id tương ứng với khóa chính của bảng đó trong csdl, @Column là tên của cột đó, và @NotBlank, @Min
+	để validate dữ liệu
 - Tạo các controller để xử lý các yêu cầu
+- Mở web sẽ là đường link '/', controller có dạnh getmapping("/") sẽ xử lý và trả về trang home.
+- Khi nhấn View Products, controller getmapping("/products") sẽ lấy dữ liệu từ csdl chuyển tới trang products.html
+
 - @GetMapping("/updateProduct") sẽ khởi tạo product, gán và  hiển thị trang updateProduct
 - Tại trang updateProduct sẽ có 1 form để cập nhật lại các thuộc tính của product
+- trong hàm showEditProducts, sử dụng @PathVariable để nhận giá trị của id, gọi hàm findById 
+trong productRepo(đã kế thừa crud) để lấy product theo id. 
 - Tạo 1 trang notfound để xử lý trường hợp @GetMapping("/updateProduct/{id}") id không tồn tại
+-  Khi submit form th:action="@{/products/updateProduct}", hàm updateProducts @PostMapping("/updateProduct") 
+của  @RequestMapping("/products") sẽ xử lý, nếu có lỗi dữ liệu  thì sẽ trở về trang update, neeus không
+sẽ lưu vào csdl và thông báo thành công về trang products
