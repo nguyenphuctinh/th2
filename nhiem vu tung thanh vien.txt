@@ -1,0 +1,3 @@
+Nguyễn Phúc Tĩnh - B19DCCN587: viết productController, products.html, updateProduct.html
+Nguyễn Duy Mạnh - B19DCCN417: viết model,  HomeController, repository
+Nguyễn Đình Quân -B19DCCN528: tạo csdl, viết notfount.html, home.html, deleteProduct.html, css
