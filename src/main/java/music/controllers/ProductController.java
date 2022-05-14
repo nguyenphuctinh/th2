@@ -37,7 +37,7 @@ public class ProductController {
 		return "updateProduct";
 	}
 	@GetMapping("/updateProduct/{id}")
-	public String showEditProducts(	 String id,Model model) {
+	public String showEditProducts(@PathVariable String id,Model model) {
 		Optional<Product> product = productRepo.findById(id);
 		if (product.isPresent()) {
 			model.addAttribute("product", product.get());
